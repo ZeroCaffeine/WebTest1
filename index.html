@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                         </form>
-                        <a href="" id="vote button" class="button disabled fit">Vote</a>
+                        <a href="#" onclick="App.voteForCandidate(); return false;" id="vote button" class="button disabled fit">Vote</a>
 
                         <hr>
                         <form method="post" action="#">
@@ -167,7 +167,7 @@
                                     <textarea name="message" id="Insert token count" rows="1" onkeyup="checkTokenByte()"></textarea>
                                 </div>
                             </div>
-                            <a href="" class="button disabled fit" id="purchase button">Purchase</a>
+                            <a href="#" onclick="App.buyTokens(); return false;" class="button disabled fit" id="purchase button">Purchase</a>
                         </form>
 
 
@@ -178,7 +178,7 @@
                                     <textarea name="message" id="Insert candidate name" rows="1" onkeyup="checkInfoByte()"></textarea>
                                 </div>
                             </div>
-                            <a href="" class="button disabled fit" id="lookup button">Lookup</a>
+                            <a href="#" onclick="App.lookupVoterInfo(); return false;" class="button disabled fit" id="lookup button">Lookup</a>
                         </form>
 
                     </section>
@@ -269,6 +269,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
