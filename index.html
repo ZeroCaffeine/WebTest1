@@ -6,6 +6,46 @@
 -->
 <html>
 <head>
+    <script>
+        function checkVoteByte() {
+            var candidateName = document.getElementById("candidate name message");
+            var tokenCount = document.getElementById("token for vote message");
+            var count1 = candidateName.value.length;
+            var count2 = tokenCount.value.length;
+
+            if (count1 > 0 && count2 > 0) {
+                document.getElementById('vote button').className = 'button fit'
+            }
+            else {
+                document.getElementById('vote button').className = 'button disabled fit'
+            }
+        }
+
+        function checkInfoByte() {
+            var candidateName = document.getElementById("Insert candidate name");
+            var count1 = candidateName.value.length;
+
+            if (count1 > 0) {
+                document.getElementById('lookup button').className = 'button fit'
+            }
+            else {
+                document.getElementById('lookup button').className = 'button disabled fit'
+            }
+        }
+
+        function checkTokenByte() {
+            var tokenCount = document.getElementById("Insert token count");
+            var count1 = tokenCount.value.length;
+
+            if (count1 > 0) {
+                document.getElementById('purchase button').className = 'button fit'
+            }
+            else {
+                document.getElementById('purchase button').className = 'button disabled fit'
+            }
+        }
+    </script>
+
     <title>Decentralized Voting Application</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -49,7 +89,7 @@
                 </ul>
             </div>
         </section>
-        
+
         <!-- Table -->
         <section id="two" class="wrapper style2 fullscreen fade-up">
             <div class="inner">
@@ -68,9 +108,9 @@
                                 <tbody id="candidate-rows"></tbody>
                             </table>
                         </div>
-                        
+
                         <hr>
-                        
+
                         <h3>Tokens</h3>
                         <div class="table-responsive">
                             <table class="alt">
@@ -111,39 +151,37 @@
                             <div class="fields">
                                 <div class="field">
                                     <label for="message">Candidate Name</label>
-                                    <textarea name="message" id="candidate name message" rows="1"></textarea>
+                                    <textarea name="textarea_vote" id="candidate name message" rows="1" onkeyup="checkVoteByte()"></textarea>
                                 </div>
                                 <div class="field">
                                     <label for="message">Token for Vote</label>
-                                    <textarea name="message" id="token for vote message" rows="1"></textarea>
+                                    <textarea name="textarea_voite_token" id="token for vote message" rows="1" onkeyup="checkVoteByte()"></textarea>
                                 </div>
                             </div>
                         </form>
-                        <a href="" class="button primary fit">Vote</a>
+                        <a href="" id="vote button" class="button disabled fit">Vote</a>
 
                         <hr>
                         <form method="post" action="#">
                             <div class="fields">
                                 <div class="field">
-                                    <label for="message">Lookup Vote Info</label>
-                                    <textarea name="message" id="Insert candidate name" rows="1"></textarea>
+                                    <label for="message">Purchase Tokens</label>
+                                    <textarea name="message" id="Insert token count" rows="1" onkeyup="checkTokenByte()"></textarea>
                                 </div>
                             </div>
-                            <a href="" class="button primary fit">Purchase</a>
+                            <a href="" class="button disabled fit" id="purchase button">Purchase</a>
                         </form>
-                        
+
 
                         <form method="post" action="#">
                             <div class="fields">
                                 <div class="field">
                                     <label for="message">Lookup Vote Info</label>
-                                    <textarea name="message" id="Insert candidate name" rows="1"></textarea>
+                                    <textarea name="message" id="Insert candidate name" rows="1" onkeyup="checkInfoByte()"></textarea>
                                 </div>
                             </div>
-                                <a href="" class="button primary fit">Lookup</a>
+                            <a href="" class="button disabled fit" id="lookup button">Lookup</a>
                         </form>
-                        
-                        
 
                     </section>
                 </div>
@@ -176,8 +214,7 @@
                                 <li><a href="" class="button submit">Send Message</a></li>
                             </ul>
                         </form>
-                    </section>>
-
+                    </section>
 
                     <section>
                         <ul class="contact">
